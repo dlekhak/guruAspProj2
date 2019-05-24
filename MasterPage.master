@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head runat="server">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="css/jquery-3.0.0.min.js"></script>
+    <script src="css/esm/popper.min.js"></script>
+    <title>Guru Tutor</title>
+
+</head>
+<body id="page-top">
+
+    <form id="form1" runat="server">
+
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
+
+            <div class="container-fluid">
+                <a class="navbar-brand js-scroll-trigger" href="Home.aspx">
+                    <img src="/images/logo.png" width="" />
+                </a>
+                <button class="navbar-toggler text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+            <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <%--<li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/Default.aspx">Home</a>
+                        </li>--%>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/Home.aspx">Your Tutor</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/AboutUs.aspx">About</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/OurServices.aspx">Our Services</a>
+                        </li>
+
+
+
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/feedback.aspx">FeedBack</a>
+                        </li>
+
+                        <li>
+
+                            <% if (Session["Email"] != null)
+                                { %>
+                            <span class="text-primary"><%= Session["Email"] %></span>
+                            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" ForeColor="#33CC33">Logout</asp:LinkButton>
+
+
+                            <%}
+                                else
+                                { %><a href="/Login.aspx"><span class=""></span>
+                          <asp:Label ID="Label1" runat="server" Text="Login/Sign Up"></asp:Label>
+                      </a>
+                            <asp:Label ID="Label2" runat="server" ForeColor="#009900"></asp:Label>
+                            <%} %>
+
+
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer text-center">
+            &copy;
+            <script>new Date().getFullYear() > 2010 && document.write(+new Date().getFullYear());</script>
+            , GURU TUTOR.
+        </footer>
+    </form>
+</body>
+</html>
